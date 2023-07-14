@@ -1,0 +1,1758 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Jeongyeon</First><Last>Kim</Last></Person>
+    <Email>kjy6690@gmail.com</Email>
+    <Organization>Korea Advanced Institute of Science and Technology</Organization>
+    <Address>
+      <Line>291 Daehakro</Line>
+      <City>Daejeon</City>
+      <Zip-Code>34141</Zip-Code>
+      <Country>South Korea</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>HongSook</First><Last>Kim</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL16791">
+    <Status database="GEO">
+      <Submission-Date>2013-03-14</Submission-Date>
+      <Release-Date>2013-03-14</Release-Date>
+      <Last-Update-Date>2019-03-27</Last-Update-Date>
+    </Status>
+    <Title>Illumina HiSeq 2500 (Homo sapiens)</Title>
+    <Accession database="GEO">GPL16791</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="9606">Homo sapiens</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM3995402">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 990</Title>
+    <Accession database="GEO">GSM3995402</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+68
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+95
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00348_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12419350" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631823" />
+  </Sample>
+
+  <Sample iid="GSM3995403">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 947</Title>
+    <Accession database="GEO">GSM3995403</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+81
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+618
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00344_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12419349" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631824" />
+  </Sample>
+
+  <Sample iid="GSM3995404">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 825</Title>
+    <Accession database="GEO">GSM3995404</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+female
+      </Characteristics>
+      <Characteristics tag="age">
+57
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+43
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00828_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12419348" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631825" />
+  </Sample>
+
+  <Sample iid="GSM3995405">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 573</Title>
+    <Accession database="GEO">GSM3995405</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+64
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+45
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00558_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12419347" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631826" />
+  </Sample>
+
+  <Sample iid="GSM3995406">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 378</Title>
+    <Accession database="GEO">GSM3995406</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+female
+      </Characteristics>
+      <Characteristics tag="age">
+54
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+412
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00002_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421201" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631827" />
+  </Sample>
+
+  <Sample iid="GSM3995407">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1873</Title>
+    <Accession database="GEO">GSM3995407</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+66
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+37
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00583_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421200" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631828" />
+  </Sample>
+
+  <Sample iid="GSM3995408">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1809</Title>
+    <Accession database="GEO">GSM3995408</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+68
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+44
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00539_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421199" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631829" />
+  </Sample>
+
+  <Sample iid="GSM3995409">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1708</Title>
+    <Accession database="GEO">GSM3995409</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+69
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+168
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_01413_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421236" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631830" />
+  </Sample>
+
+  <Sample iid="GSM3995410">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1619</Title>
+    <Accession database="GEO">GSM3995410</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+73
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+82
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00414_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421235" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631831" />
+  </Sample>
+
+  <Sample iid="GSM3995411">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1554</Title>
+    <Accession database="GEO">GSM3995411</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+56
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+37
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00413_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421234" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631832" />
+  </Sample>
+
+  <Sample iid="GSM3995412">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1528</Title>
+    <Accession database="GEO">GSM3995412</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+68
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+279
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00829_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421233" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631833" />
+  </Sample>
+
+  <Sample iid="GSM3995413">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1510</Title>
+    <Accession database="GEO">GSM3995413</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+51
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+324
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00131_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421198" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631834" />
+  </Sample>
+
+  <Sample iid="GSM3995414">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1508</Title>
+    <Accession database="GEO">GSM3995414</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+56
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+65
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00883_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421197" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631835" />
+  </Sample>
+
+  <Sample iid="GSM3995415">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1425</Title>
+    <Accession database="GEO">GSM3995415</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+61
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+59
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00180_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421232" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631836" />
+  </Sample>
+
+  <Sample iid="GSM3995416">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1412</Title>
+    <Accession database="GEO">GSM3995416</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+59
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+3
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00147_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421231" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631837" />
+  </Sample>
+
+  <Sample iid="GSM3995417">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1401</Title>
+    <Accession database="GEO">GSM3995417</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+female
+      </Characteristics>
+      <Characteristics tag="age">
+65
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+28
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00497_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421230" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631838" />
+  </Sample>
+
+  <Sample iid="GSM3995418">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1358</Title>
+    <Accession database="GEO">GSM3995418</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+65
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+257
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00129_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421229" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631839" />
+  </Sample>
+
+  <Sample iid="GSM3995419">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1352</Title>
+    <Accession database="GEO">GSM3995419</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+44
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+250
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_01439_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421228" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631840" />
+  </Sample>
+
+  <Sample iid="GSM3995420">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1327</Title>
+    <Accession database="GEO">GSM3995420</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+59
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+0
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+205
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00480_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421227" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631841" />
+  </Sample>
+
+  <Sample iid="GSM3995421">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1203</Title>
+    <Accession database="GEO">GSM3995421</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+66
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+25
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00478_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421226" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631842" />
+  </Sample>
+
+  <Sample iid="GSM3995422">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1164</Title>
+    <Accession database="GEO">GSM3995422</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+62
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+11
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00145_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421225" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631843" />
+  </Sample>
+
+  <Sample iid="GSM3995423">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1155</Title>
+    <Accession database="GEO">GSM3995423</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+61
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+34
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00518_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421224" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631844" />
+  </Sample>
+
+  <Sample iid="GSM3995424">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1145</Title>
+    <Accession database="GEO">GSM3995424</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+60
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+73
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00179_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421223" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631845" />
+  </Sample>
+
+  <Sample iid="GSM3995425">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1104</Title>
+    <Accession database="GEO">GSM3995425</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+73
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+29
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_00060_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421222" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631846" />
+  </Sample>
+
+  <Sample iid="GSM3995426">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1079</Title>
+    <Accession database="GEO">GSM3995426</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+female
+      </Characteristics>
+      <Characteristics tag="age">
+62
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+174
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_18_00628_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421221" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631847" />
+  </Sample>
+
+  <Sample iid="GSM3995427">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1066</Title>
+    <Accession database="GEO">GSM3995427</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+female
+      </Characteristics>
+      <Characteristics tag="age">
+70
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+23
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_01806_RP_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421220" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631848" />
+  </Sample>
+
+  <Sample iid="GSM3995428">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2019-08-02</Last-Update-Date>
+    </Status>
+    <Title>NSCLC 1017</Title>
+    <Accession database="GEO">GSM3995428</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>NSCLC</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="subject status">
+advanced non-small cell lung carcinoma (NSCLC) patient treated with anti-PD-1/PD-L1
+      </Characteristics>
+      <Characteristics tag="gender">
+male
+      </Characteristics>
+      <Characteristics tag="age">
+38
+      </Characteristics>
+      <Characteristics tag="progression-free survival (pfs)">
+1
+      </Characteristics>
+      <Characteristics tag="pfs.time">
+38
+      </Characteristics>
+      <Characteristics tag="tissue">
+tumor tissue
+      </Characteristics>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was extracted from same tumour tissue using Allprep DNA/RNA Mini Kit (Qiagen
+RNA libraries were prepared for sequencing using standard Illumina protocols
+      </Extract-Protocol>
+    </Channel>
+    <Description>
+R_17_01923_RT_WTS
+    </Description>
+    <Data-Processing>
+Alignment was performed using STAR (2.5.3)
+gene expression values were quantified using RSEM (1.3.1)
+Genome_build: hg19
+Supplementary_files_format_and_content: gene expression matrix (tab-delimited text file; TPM unit)
+    </Data-Processing>
+    <Platform-Ref ref="GPL16791" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 2500</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="unknown">
+NONE
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN12421219" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX6631849" />
+  </Sample>
+
+  <Series iid="GSE135222">
+    <Status database="GEO">
+      <Submission-Date>2019-08-01</Submission-Date>
+      <Release-Date>2019-08-02</Release-Date>
+      <Last-Update-Date>2020-08-24</Last-Update-Date>
+    </Status>
+    <Title>DNA methylation loss coupled with mitotic cell division promotes immune evasion of tumours with high mutation load [RNA-seq]</Title>
+    <Accession database="GEO">GSE135222</Accession>
+    <Pubmed-ID>31537801</Pubmed-ID>
+    <Pubmed-ID>32762727</Pubmed-ID>
+    <Summary>
+Mitotic cell division increases tumour mutation burden and copy number load, predictive markers of the clinical benefit of immunotherapy. Cell division correlates also with genomic demethylation involving methylation loss in late-replicating partial methylation domains. Here we find that immunomodulatory pathway genes are concentrated in these domains and transcriptionally repressed in demethylated tumours with CpG island promoter hypermethylation. Global methylation loss correlated with immune evasion signatures independently of mutation burden and aneuploidy. Methylome data of our cohort (n = 60) and a published cohort (n = 81) in lung cancer and a melanoma cohort (n = 40) consistently demonstrated that genomic methylation alterations counteract the contribution of high mutation burden and increase immunotherapeutic resistance. Higher predictive power was observed for methylation loss than mutation burden. We also found that genomic hypomethylation correlates with the immune escape signatures of aneuploid tumours. Hence, DNA methylation alterations implicate epigenetic modulation in precision immunotherapy.
+    </Summary>
+    <Overall-Design>
+RNA-seq for a total of 27 advanced non-small cell lung carcinoma patients who were treated with anti-PD-1/PD-L1
+    </Overall-Design>
+    <Type>Expression profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib3" position="1" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM3995402" />
+    <Sample-Ref ref="GSM3995403" />
+    <Sample-Ref ref="GSM3995404" />
+    <Sample-Ref ref="GSM3995405" />
+    <Sample-Ref ref="GSM3995406" />
+    <Sample-Ref ref="GSM3995407" />
+    <Sample-Ref ref="GSM3995408" />
+    <Sample-Ref ref="GSM3995409" />
+    <Sample-Ref ref="GSM3995410" />
+    <Sample-Ref ref="GSM3995411" />
+    <Sample-Ref ref="GSM3995412" />
+    <Sample-Ref ref="GSM3995413" />
+    <Sample-Ref ref="GSM3995414" />
+    <Sample-Ref ref="GSM3995415" />
+    <Sample-Ref ref="GSM3995416" />
+    <Sample-Ref ref="GSM3995417" />
+    <Sample-Ref ref="GSM3995418" />
+    <Sample-Ref ref="GSM3995419" />
+    <Sample-Ref ref="GSM3995420" />
+    <Sample-Ref ref="GSM3995421" />
+    <Sample-Ref ref="GSM3995422" />
+    <Sample-Ref ref="GSM3995423" />
+    <Sample-Ref ref="GSM3995424" />
+    <Sample-Ref ref="GSM3995425" />
+    <Sample-Ref ref="GSM3995426" />
+    <Sample-Ref ref="GSM3995427" />
+    <Sample-Ref ref="GSM3995428" />
+    <Supplementary-Data type="TSV">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE135nnn/GSE135222/suppl/GSE135222_GEO_RNA-seq_omicslab_exp.tsv.gz
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA557841" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP217040" />
+  </Series>
+
+</MINiML>

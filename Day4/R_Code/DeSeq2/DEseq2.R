@@ -35,7 +35,7 @@ type <- c(factor(database$SAMPLE_TYPE))
 type <- relevel(type, ref = "ND")
 # 整理数据
 database <- data.frame(name=sample_names, condition=type)
-
+write.table(database, file = "./Original_Version_Info.txt")
 # ***********************
 # implement DESEQ2
 
@@ -64,7 +64,7 @@ write.table(resdata, "all_des_output.txt", row.names=TRUE, sep = '\t')
 
 # plot MA Graph
 ma1 <- plotMA(res, main="DESeq2", ylim=c(2, 2))
-ggsave("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/Graphs/MA1.pdf", ma1)
+ggsave("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/Graphs/MA1.pdf", ma1, limitsize = F)
 
 
 # 读取DESeq结果数据
@@ -111,7 +111,7 @@ p2 <- ggplot(new, aes(log2FoldChange, -log(padj,10))) +
   guides(colour = guide_legend(override.aes = list(size=1.5))) 
 p2
 
-ggsave("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/Graphs/Volcano2.pdf", p2)
+ggsave("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/Graphs/Volcano2.pdf", p2, limitsize = F)
 
 # 列出前10最具差异性的基因
 library(knitr)

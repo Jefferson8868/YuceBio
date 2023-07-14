@@ -8,11 +8,11 @@ library(pathview)
 library(tidyverse)
 
 
-res <- read.delim("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/res_output.txt", sep = '\t')
+res <- read.delim("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/all_des_output.txt", sep = '\t')
+rownames(res) <- res$Row.names
 
 
-
-signif_res <- res[res$padj < 0.05 & !is.na(res$padj), ]
+signif_res <- res[res$padj < 0.05 & !is.na(res$padj) & (abs(res$log2FoldChange) > 2), ]
 signif_genes <- as.character(rownames(signif_res))
 signif_genes <-  sub("\\..*", "", signif_genes)
 all_genes <- as.character(rownames(res))
@@ -37,7 +37,7 @@ filtered_file <- res %>%
   filter(rownames(.) %in% all_genes$ENSEMBL)
 
 filtered_file <- filtered_file %>%
-  mutate(ENTREZID = all_genes$ENTREZID[match(rownames(filtered_file), all_genes$ENSEMBL)])
+  mutate(SYMBOL = all_genes$SYMBOL[match(rownames(filtered_file), all_genes$ENSEMBL)])
 # need to manually change to Gene Symbol
 
 filtered_file <- replace(filtered_file, is.na(filtered_file), 0)
@@ -84,7 +84,7 @@ dev.off()
 
 # ego_MF.fil <- simplify(ego_MF)
 
-ego_ALL.sig <- ego_ALL[ego_ALL$pvalue <= 0.01]
+# ego_ALL.sig <- ego_ALL[ego_ALL$pvalue <= 0.01]
 # 过滤后为数据框，不能用自带的参数直接绘制，可以使用ggplot2进行绘制。（暂略）
 
 kk <- enrichKEGG(gene = gene_list$ENTREZID,

@@ -1,0 +1,7 @@
+"     ID","Description"," GeneRatio","  BgRatio","    pvalue","   p.adjust","    qvalue","   geneID","    Count"
+"Length:4          ","Length:4          ","Length:4          ","Length:4          ","Min.   :0.0004939  ","Min.   :0.08397  ","Min.   :0.08007  ","Length:4          ","Min.   :4.0  "
+"Class :character  ","Class :character  ","Class :character  ","Class :character  ","1st Qu.:0.0011731  ","1st Qu.:0.08707  ","1st Qu.:0.08302  ","Class :character  ","1st Qu.:4.0  "
+"Mode  :character  ","Mode  :character  ","Mode  :character  ","Mode  :character  ","Median :0.0014771  ","Median :0.08810  ","Median :0.08401  ","Mode  :character  ","Median :5.0  "
+NA,NA,NA,NA,"Mean   :0.0020032  ","Mean   :0.11354  ","Mean   :0.10827  ",NA,"Mean   :5.5  "
+NA,NA,NA,NA,"3rd Qu.:0.0023072  ","3rd Qu.:0.11458  ","3rd Qu.:0.10925  ",NA,"3rd Qu.:6.5  "
+NA,NA,NA,NA,"Max.   :0.0045648  ","Max.   :0.19400  ","Max.   :0.18499  ",NA,"Max.   :8.0  "

@@ -1,4 +1,5 @@
-setwd("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6")
+# setwd("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6")
+setwd("/Users/jeffersonchen/programming/YuceBio/YuceBio/Organized_R_Code/R_Code")
 source("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Assist/CiberSort.R")
 # install_github("omnideconv/immunedeconv")
 library(e1071)
@@ -19,9 +20,11 @@ library(tinyarray)
 
 # exp <- read.delim("Count_Data.txt", sep = '\t')
 # exp <- trans_exp(exp,mrna_only = T)
-file <- read.delim("data_outfpkm.txt", sep = '\t')
-sample_names <- c("SRR1382274", "SRR1382275", "SRR1382276", "SRR1382277", "SRR1382278", "SRR1382279", "SRR1382280", "SRR1382281", "SRR1382282")
+# file <- read.delim("data_outfpkm.txt", sep = '\t')
+file <- read.delim("../Results/With_P_Gene/With_P_Genefpkm.txt", sep = '\t')
 
+sample_names <- c("SRR1382274", "SRR1382275", "SRR1382276", "SRR1382277", "SRR1382278", "SRR1382279", "SRR1382280", "SRR1382281", "SRR1382282")
+file <- aggregate(file, .~ Geneid, FUN = "sum")
 rownames(file) <- file$Geneid
 file <- file[, -1]
 file <- file[rowSums(file) > 1,]
@@ -49,7 +52,7 @@ colnames(filtered_file)[1] <- "Gene Symbol"
 filtered_file <- aggregate(filtered_file, .~ `Gene Symbol`, FUN = mean)
 write.table(filtered_file, file = "ciber_input.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 
-res_cibersort <- CIBERSORT('LM22.txt','ciber_input.txt', perm = 1000, QN = F)
+res_cibersort <- CIBERSORT('../Data/LM22.txt','ciber_input.txt', perm = 1000, QN = F)
 
 write.table(res_cibersort, file="res_cibersort.txt", sep="\t", col.names=T, row.names=T, quote=F)
 save(res_cibersort, file="res_cibersort.Rdata")
@@ -93,7 +96,7 @@ k <- apply(re,2,function(x) {sum(x == 0) < nrow(res_cibersort)/2})
 table(k)
 
 re2 <- as.data.frame(t(re[,k]))
-colnames(gene_expression)[2:10]
+
 an = data.frame(group = c("ND", "ND", "ND", "ND", "D", "D", "D", "D", "D"),
                 row.names = colnames(file)[1:9])
 
@@ -168,7 +171,7 @@ cpg <- ggplot(dat,aes(Cell_type,Proportion,fill = Group)) +
 ggsave("Comparsion_Graph.pdf", cpg)
 
 
-res_cibersort_corrected <- res_cibersort[, -19]
+res_cibersort_corrected <- res_cibersort[, -c(5,10, 21)]
 V <- cor(res_cibersort_corrected, y = NULL, use = "everything", method = c("pearson"))
 
 corr_mat <- round(V, 2)

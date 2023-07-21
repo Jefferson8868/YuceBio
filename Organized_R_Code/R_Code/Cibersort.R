@@ -14,26 +14,67 @@ library(topGO)
 library(clusterProfiler)
 library(pathview)
 library(tidyverse)
-# BiocManager::install("tinyarray")
 library(tinyarray)
-library(tidyverse)
 
 # exp <- read.delim("Count_Data.txt", sep = '\t')
 # exp <- trans_exp(exp,mrna_only = T)
 
 LM22.file <- read.delim("./../Data/LM22.txt", sep = '\t')
+
+# new version
 data <- read.delim("./../Data/GSE135222.hg38.genename.tpm.txt", sep = '\t')
 rownames(data) <- data$X1
 colnames(data)[1] <- "Gene Symbol"
 # data <- data[, -1]
 data
-write.table(data, "./../Data/filtered_file.txt", sep = '\t', row.names = F)
+write.table(data, "./../Results/GEO/filtered.txt", sep = '\t', row.names = F)
 
+# old version
 
+# exon--gene
+# Gene: 14.54% of input gene IDs are fail to map...
+# file <- file[rowSums(file) > 1,]
+# 18706
+# 15975
+# Exon: 25.01% of input gene IDs are fail to map...
+# file <- file[rowSums(file) > 1,]
+# 30086
+# 22530
+file <- read.delim("data_outfpkm.txt", sep = '\t')
 
-res_cibersort <- CIBERSORT('./../Data/LM22.txt','./../Data/filtered_file.txt', perm = 1000, QN = F)
+sample_names <- c("SRR1382274", "SRR1382275", "SRR1382276", "SRR1382277", "SRR1382278", "SRR1382279", "SRR1382280", "SRR1382281", "SRR1382282")
+file <- aggregate(file, .~ Geneid, FUN = "sum")
+rownames(file) <- file$Geneid
+file <- file[, -1]
+file <- file[rowSums(file) > 1,]
+all_genes <- as.character(rownames(file))
+all_genes <- sub("\\..*", "", all_genes)
+rownames(file) <- all_genes
+colnames(file) <- sample_names
 
-class(res_cibersort)
+keytypes(org.Hs.eg.db) 
+all_genes <-  bitr(all_genes, #数据集
+                   fromType="ENSEMBL", #输入为SYMBOL格式
+                   toType=c("SYMBOL", "ENTREZID"),  # 转为ENTERZID格式
+                   OrgDb="org.Hs.eg.db") #人类 数
+
+filtered_file <- file %>%
+  filter(rownames(.) %in% all_genes$ENSEMBL)
+
+filtered_file <- filtered_file %>%
+  mutate(SYMBOL = all_genes$SYMBOL[match(rownames(filtered_file), all_genes$ENSEMBL)])
+# need to manually change to Gene Symbol
+nrow(filtered_file)
+filtered_file <- replace(filtered_file, is.na(filtered_file), 0)
+filtered_file <- filtered_file[, c(10, 1:9)]
+colnames(filtered_file)[1] <- "Gene Symbol"
+filtered_file <- aggregate(filtered_file, .~ `Gene Symbol`, FUN = mean)
+write.table(filtered_file, file = "ciber_input.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+
+res_cibersort <- CIBERSORT('../Data/LM22.txt','ciber_input.txt', perm = 100, QN = F)
+
+write.table(res_cibersort, file="res_cibersort.txt", sep="\t", col.names=T, row.names=T, quote=F)
+save(res_cibersort, file="res_cibersort.Rdata")
 # write.table(res_cibersort, file="res_cibersort.txt", sep="\t", col.names=T, row.names=T, quote=F)
 # save(res_cibersort, file="res_cibersort.Rdata")
 
@@ -74,25 +115,40 @@ dev.off()
 
 
 library(pheatmap)
+# res_cibersort <- read.delim("CIBERSORT-Results.txt", sep = '\t')
+# row.names(res_cibersort) <- res_cibersort$Mixture
+
+res_cibersort <- as.matrix(res_cibersort)
 re <- res_cibersort[, -(23:25)]
 k <- apply(re,2,function(x) {sum(x == 0) < nrow(res_cibersort)/2})
 table(k)
 
 re2 <- as.data.frame(t(re[,k]))
 
+# new version
 sample_id <- read.delim("./../Data/Sample_Names.txt", sep = '\t', header = F)
 colnames(sample_id) <- c("Samples", "Condition", "Dataset")
 rownames(sample_id) <- sample_id$Samples
-
 sample_id$Condition <- ifelse(sample_id$Condition == "Nonresponder", "NR", "R") %>% factor( levels = c("NR", "R")) %>% relevel(ref = "NR")
 an = data.frame(group = sample_id$Condition,
                 row.names = sample_id$Samples)
 
-pdf("HeatMap.pdf")
+
+# old version
+sample_id <- read.delim("./../Data/Original_Version_Info.txt", sep = ' ', header = T)
+colnames(sample_id) <- c("Samples", "Condition")
+sample_id$Condition <- sample_id$Condition %>% factor( levels = c("ND", "D")) %>% relevel(ref = "ND")
+an = data.frame(group = sample_id$Condition,
+                row.names = sample_id$Samples)
+
+pdf("HeatMap_C.pdf")
 hm <- pheatmap(re2,scale = "row",
-         show_colnames = F,
+         show_colnames = T,
          annotation_col = an,
-         color = colorRampPalette(c("navy", "white", "firebrick3"))(50))
+         color = colorRampPalette(c("navy", "white", "firebrick3"))(50),
+         cluster_cols = FALSE,
+         main = "CiberSort VS. Sample Groups"
+         )
 hm
 dev.off()
 
@@ -149,7 +205,15 @@ lg <- ggplot(dat,aes(Cell_type,Proportion,fill = Cell_type)) +
 lg
 ggsave("Ordered_boxplot.pdf", lg, width = 11, height = 8)
 
+# new version
 dat$Group = ifelse(sample_id[dat$Sample, 2] == "NR", "NR", "R")
+dat$Group <- factor(dat$Group, levels = c("NR", "R")) %>% relevel(ref = "NR")
+
+# old version
+rownames(sample_id) <- sample_id$Samples
+dat$Group = ifelse(sample_id[dat$Sample, 2] == "ND", "ND", "D")
+dat$Group <- factor(dat$Group, levels = c("ND", "D")) %>% relevel(ref = "ND")
+
 library(ggpubr)
 cpg <- ggplot(dat,aes(Cell_type,Proportion,fill = Group)) + 
   geom_boxplot(outlier.shape = 21,color = "black") + 
@@ -157,7 +221,7 @@ cpg <- ggplot(dat,aes(Cell_type,Proportion,fill = Group)) +
   labs(x = "Cell Type", y = "Estimated Proportion") +
   theme(legend.position = "top") + 
   theme(axis.text.x = element_text(angle=80,vjust = 0.5))+
-  scale_fill_manual(values = mypalette(22)[c(6,1)])+ stat_compare_means(aes(group = Group,label = ..p.signif..),method = "wilcox.test")
+  scale_fill_manual(values = mypalette(22)[c(6,1)])+ stat_compare_means(aes(group = Group,label = ..p.signif..),method = "kruskal.test")
 
 
 ggsave("Comparsion_Graph.pdf", cpg,  width = 11, height = 8)

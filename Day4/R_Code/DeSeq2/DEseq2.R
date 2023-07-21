@@ -10,19 +10,23 @@ library("htmltools")
 # BiocManager::install("DESeq2")
 
 # 加载featureCount 结果
-data <- read.delim("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/Summarized_Data/all.txt", sep = '\t')
+data <- read.delim("/Users/jeffersonchen/programming/YuceBio/Feature_Count/new.txt", sep = '\t')
 
 
 # 重新命名数据列名
 sample_names <- c("SRR1382274", "SRR1382275", "SRR1382276", "SRR1382277", "SRR1382278", "SRR1382279", "SRR1382280", "SRR1382281", "SRR1382282")
 names(data)[7:15] <- sample_names
-
+data <- data[, c(1, 7:15)]
+data <- aggregate(data, .~ Geneid, FUN = "sum")
+rownames(data) <- data$Geneid
+data <- data[, -1]
 # 取出所有count值
-countData <- as.matrix(data[7:15])
+countData <- as.matrix(data)
+
 # write.table(countData, "/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Count_Data.txt", sep = '\t', row.names = TRUE)
 
 # 略微调整数据
-rownames(countData) <- data$Geneid
+rownames(countData) <- rownames(data)
 
 # 读取样本的基础信息
 database <- read.delim("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/Summarized_Data/SraRunTable9_GSE168009.txt", sep = ",")
@@ -39,6 +43,7 @@ write.table(database, file = "./Original_Version_Info.txt")
 # ***********************
 # implement DESEQ2
 
+
 dds <- DESeqDataSetFromMatrix(countData, colData=database, design = ~ condition)
 
 # 取行合大于一的数据进行筛选
@@ -51,9 +56,9 @@ plotDispEsts(dds)
 res <- results(dds)
 
 # 储存数据
-countData <-data.frame(countData,log2FoldChange = res$log2FoldChange, padj = res$padj, pvalue = res$pvalue)
+# countData <-data.frame(countData,log2FoldChange = res$log2FoldChange, padj = res$padj, pvalue = res$pvalue)
 
-write.table(countData, "/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Count_Data.txt", sep = '\t', row.names = TRUE)
+write.table(countData, "/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Count_Data.txt", sep = '\t', row.names = F)
 
 write.table(res, "res_output.txt", sep = '\t')
 

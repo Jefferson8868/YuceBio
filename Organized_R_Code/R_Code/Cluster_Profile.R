@@ -1,4 +1,4 @@
-setwd("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day5/R_Code")
+setwd("/Users/jeffersonchen/programming/YuceBio/YuceBio/Organized_R_Code/R_Code")
 # Gene ID transfer
 library(DOSE)
 library(org.Hs.eg.db)
@@ -7,12 +7,15 @@ library(clusterProfiler)
 library(pathview)
 library(tidyverse)
 
-
-res <- read.delim("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day4/R_Code/DeSeq2/res_output.txt", sep = '\t')
-
-
-
-signif_res <- res[res$padj < 0.05 & !is.na(res$padj), ]
+res <- read.delim("./../Results/With_P_Exon/res_output.txt", sep = '\t')
+# exon: 348
+# up 159
+# down 189
+# gene: 347
+# up 151
+# down 196
+signif_res <- res[res$padj < 0.1 & !is.na(res$padj) & (res$log2FoldChange) > 1,]
+# signif_res <- res[res$padj < 0.1 & !is.na(res$padj) & (res$log2FoldChange) < 1,]
 signif_genes <- as.character(rownames(signif_res))
 signif_genes <-  sub("\\..*", "", signif_genes)
 all_genes <- as.character(rownames(res))
@@ -44,16 +47,20 @@ filtered_file <- replace(filtered_file, is.na(filtered_file), 0)
 
 filtered_file
 
-write.table(filtered_file, file = "filtered_file.txt", sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(filtered_file, file = "./../Results/With_P_Gene/filtered_file.txt", sep = "\t", quote = FALSE, row.names = FALSE)
 
 ego <- enrichGO(gene = gene_list$ENTREZID,
-                universe = all_genes$ENTREZID,
+                # universe = all_genes$ENTREZID,
                 keyType = "ENTREZID",
                 OrgDb = org.Hs.eg.db,
                 ont = "BP",
+                pvalueCutoff = 0.05,
                 pAdjustMethod = "BH",
-                qvalueCutoff  = 1,
                 readable = TRUE)
+
+
+
+
 
 cluster_summary <- data.frame(ego)
 
@@ -84,17 +91,27 @@ dev.off()
 
 # ego_MF.fil <- simplify(ego_MF)
 
-ego_ALL.sig <- ego_ALL[ego_ALL$pvalue <= 0.01]
+# ego_ALL.sig <- ego_ALL[ego_ALL$pvalue <= 0.01]
 # 过滤后为数据框，不能用自带的参数直接绘制，可以使用ggplot2进行绘制。（暂略）
+gene_list$ENTREZID
+
+
 
 kk <- enrichKEGG(gene = gene_list$ENTREZID,
                  organism = 'hsa', #KEGG可以用organism = 'hsa'
-                 pvalueCutoff = 1)
-head(kk,2)
+                 pvalueCutoff = 0.05)
 
+
+
+
+head(kk,2)
+pdf("KEGG_Dotplot.pdf")
+dotplot(kk,title="Enrichment KEGG_dot")
+dev.off()
+kk <- data.frame(kk)
 write.csv(summary(kk),"KEGG-enrich.csv",row.names =FALSE)
 
-dotplot(kk,title="Enrichment KEGG_dot")
+
 hsa04974 <- pathview(gene.data = geneList,
                      
                      pathway.id = "hsa04974", #上述结果中的hsa04750通路

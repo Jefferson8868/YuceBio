@@ -11,7 +11,9 @@ library(rio)
 
 # **** older version
 mygroup <- read.delim("./../Data/Original_Version_Info.txt", header = T, sep =' ')
-
+mygroup <- mygroup[, -1]
+class(mygroup)
+mygroup <- factor(mygroup, levels = c("ND", "D")) %>% relevel(ref = "ND")
 # **** newer version
 mygroup <- read.delim("./../Data/Sample_Names.txt", header = F)
 mygroup <- mygroup[, 1:2]
@@ -20,15 +22,24 @@ mygroup$Condition <- ifelse(mygroup$Condition == "Nonresponder", "NR", "R")
 group <- mygroup[, 2]
 row.names(mygroup) <- mygroup[,1]
 mygroup <- mygroup[,-1]
+mygroup <- factor(dat$Group, levels = c("NR", "R")) %>% relevel(ref = "NR")
+class(mygroup)
 # ****
 
 # **** newer version
-exp <- read.table("./../Data/filtered_file.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+exp <- read.table("./../Results/GEO/filtered.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+
 # **** older version
-exp <- read.table("./../Data/ciber_input.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+exp <- read.table("./../Results/With_P_Exon/ciber_input.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
 
-exp <- read.table("./../Data/Original_Version_Filtered_Genes.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+exp <- read.table("./../Results/With_P_Gene/ciber_input.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+# 
+# exp <- read.table("/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/ciber_input.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
+# 
+# 
+# exp <- read.table("./../Data/Original_Version_Filtered_Genes.txt",sep = "\t",check.names = F,stringsAsFactors = F,header = T,row.names = 1)
 
+# *****************
 exp<- as.matrix(exp)
 
 
@@ -36,6 +47,8 @@ geneset = rio::import("./../Data/gene_set_1.Rdata")
 geneset = geneset[-1]
 
 re <- gsva(exp, geneset, method="ssgsea", mx.diff=FALSE, verbose=FALSE, min.sz > 1) 
+
+
 ssgsea_score = gsva(exp, geneset, method = "ssgsea", ssgsea.norm = TRUE, verbose = TRUE)   # signature 'matrix,list'
 
 pdf("GSEA_Result.pdf")
@@ -49,22 +62,21 @@ ncol(nc) - length(mygene)+ 1
 ncol(nc)
 # ***********************
 # 需要改变
-mygene <- rownames(exp)  #定义你的目的基因
+mygene <- gene_list$SYMBOL  #定义你的目的基因
 nc = t(rbind(re,exp[mygene,]))  ;#将你的目的基因匹配到表达矩阵---行名匹配--注意大小写
 m = rcorr(nc)$r[1:nrow(re),(ncol(nc)-length(mygene)+1):ncol(nc)]
-m[is.na(m)] = 0
+
 ##计算p值
 p = rcorr(nc)$P[1:nrow(re),(ncol(nc)-length(mygene)+1):ncol(nc)]
 head(p)
 
-p[is.na(p)] = 0
 
 tmp <- matrix(case_when(as.vector(p) < 0.01 ~ "**",
                         as.vector(p) < 0.05 ~ "*",
                         TRUE ~ ""), nrow = nrow(p))
 
 ##绘制热图
-pdf("GSEA_Heatmap.pdf", width = 20, height = 40)
+pdf("HeatMap_ssGSEA.pdf", width = 20, height = 40)
 p1 <- pheatmap(t(m),
                display_numbers =t(tmp),
                angle_col =45,
@@ -77,20 +89,6 @@ p1 <- pheatmap(t(m),
                treeheight_col = 0,
                treeheight_row = 0)
 dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

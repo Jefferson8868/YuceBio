@@ -10,7 +10,7 @@ library("htmltools")
 # BiocManager::install("DESeq2")
 
 # 加载featureCount 结果
-data <- read.delim("/Users/jeffersonchen/programming/YuceBio/Feature_Count/new.txt", sep = '\t')
+data <- read.delim("/Users/jeffersonchen/programming/YuceBio/Feature_Count/With_P_Exon.txt", sep = '\t')
 
 
 # 重新命名数据列名
@@ -58,7 +58,7 @@ res <- results(dds)
 # 储存数据
 # countData <-data.frame(countData,log2FoldChange = res$log2FoldChange, padj = res$padj, pvalue = res$pvalue)
 
-write.table(countData, "/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Count_Data.txt", sep = '\t', row.names = F)
+write.table(countData, "/Users/jeffersonchen/programming/YuceBio/YuceBio/Day6/Count_Data.txt", sep = '\t', row.names = T)
 
 write.table(res, "res_output.txt", sep = '\t')
 

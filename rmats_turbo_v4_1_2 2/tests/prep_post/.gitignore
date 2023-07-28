@@ -1,0 +1,12 @@
+/generated_input/
+/command_output/
+/out/
+/tmp_prep_1/
+/tmp_prep_2/
+/tmp_post/
+/tmp_dup_input_bam/
+/tmp_dup_prep_bam/
+/tmp_miss_input_bam/
+/tmp_miss_prep_bam/
+/tmp_extra_dot_rmats/
+/out_extra_dot_rmats/

@@ -14,14 +14,18 @@ res <- read.delim("./../Results/With_P_Exon/res_output.txt", sep = '\t')
 # gene: 347
 # up 151
 # down 196
-signif_res <- res[res$padj < 0.1 & !is.na(res$padj) & (res$log2FoldChange) > 1,]
+signif_res <- res[res$padj < 0.1 & !is.na(res$padj) & abs(res$log2FoldChange) > 1,]
+
+################
+signif_res$GeneName <- rownames(signif_res)
+res$GeneName <- rownames(res)
 # signif_res <- res[res$padj < 0.1 & !is.na(res$padj) & (res$log2FoldChange) < 1,]
 signif_genes <- as.character(rownames(signif_res))
 signif_genes <-  sub("\\..*", "", signif_genes)
 all_genes <- as.character(rownames(res))
 all_genes <- sub("\\..*", "", all_genes)
 rownames(res) <- all_genes
-
+rownames(signif_res) <- signif_genes
 keytypes(org.Hs.eg.db) 
 
 gene_list <- bitr(signif_genes, #数据集
@@ -36,11 +40,15 @@ all_genes <-  bitr(all_genes, #数据集
 all_genes
 rownames(res)
 
+# filtered_file <- signif_res %>%
+# filter(rownames(.) %in% signif_genes)
+# write.table(filtered_file, "/Users/jeffersonchen/programming/YuceBio/Bam_Files/Bam_Files/S_NO/All_Genes.txt")
+
 filtered_file <- res %>%
   filter(rownames(.) %in% all_genes$ENSEMBL)
 
 filtered_file <- filtered_file %>%
-  mutate(ENTREZID = all_genes$ENTREZID[match(rownames(filtered_file), all_genes$ENSEMBL)])
+  mutate(SYMBOL = all_genes$SYMBOL[match(rownames(filtered_file), all_genes$ENSEMBL)])
 # need to manually change to Gene Symbol
 
 filtered_file <- replace(filtered_file, is.na(filtered_file), 0)

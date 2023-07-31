@@ -49,6 +49,8 @@ filtered_file <- res %>%
 
 filtered_file <- filtered_file %>%
   mutate(SYMBOL = all_genes$SYMBOL[match(rownames(filtered_file), all_genes$ENSEMBL)])
+filtered_file <- filtered_file %>%
+  mutate(ENTREZID = all_genes$ENTREZID[match(rownames(filtered_file), all_genes$ENSEMBL)])
 # need to manually change to Gene Symbol
 
 filtered_file <- replace(filtered_file, is.na(filtered_file), 0)

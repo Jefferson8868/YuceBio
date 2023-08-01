@@ -4,7 +4,7 @@
 	**1.** Sam/Bam Files \(准备好Sam/Bam文件\)
 	**2.** GTF Annotation File \(进行基因比对时使用的参考基因GTF文件\)
 
-## **Preparing Count Data & Flattened GFF Annotation File \(准备外显子定量文件以及格式后的GFF文件\)
+## **Preparing Count Data & Flattened GFF Annotation File \(准备外显子定量文件以及格式后的GFF文件\)**
 	**1.** Make sure "HTSeq" is installed in python packages. If not, using the following command:
 		'pip install HTSeq'
 	**2.** Using the following command:
